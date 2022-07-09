@@ -45,8 +45,16 @@ jobs:
         with:
           name: upload-output-file
           path: output.txt
-          
-      
+        
+  Download_artifact:
+    runs-on: windows-latest
+    needs: build
+    steps:
+      - name: Download artifact file
+        uses: actions/download-artifact@v3
+        with: 
+          name: upload-output-file
+    
       
       
       
