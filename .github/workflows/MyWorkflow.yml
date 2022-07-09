@@ -54,6 +54,12 @@ jobs:
         uses: actions/download-artifact@v3
         with: 
           name: upload-output-file
+          
+      - name: Upload final file
+        uses: actions/upload-artifact@v3
+        with:
+          name: upload-final-file
+          path: final.txt
     
       
       
