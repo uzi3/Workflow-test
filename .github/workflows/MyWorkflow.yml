@@ -34,3 +34,24 @@ jobs:
         run: |
           write-host Add other actions to build,
           write-host test, and deploy your project.
+          
+      # Exports a text file
+      - name: Exports a text file
+        run: |
+          Write-output "This a Github actions test" | out-file output.txt
+          
+      - name: Uploads output file
+        uses: actions/upload-artifact@v3
+        with:
+          name: upload-output-file
+          path: output.txt
+          
+      
+      
+      
+      
+      
+      
+      
+      
+      
