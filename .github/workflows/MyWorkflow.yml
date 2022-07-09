@@ -54,6 +54,10 @@ jobs:
         uses: actions/download-artifact@v3
         with: 
           name: upload-output-file
+      - name: Read content of output file
+        run: |
+          $content = Get-content output.txt
+          write-output "Here's the value fetched from output.txt file - $content" | out-file final.txt
     
       
       
