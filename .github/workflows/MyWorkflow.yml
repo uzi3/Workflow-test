@@ -60,13 +60,13 @@ jobs:
         run: |
           $content = Get-content output.txt
           write-host "Here's the value fetched from output.txt file - $content"
-          #write-output "Here's the value fetched from output.txt file - $content" | out-file final.txt    
+#          write-output "Here's the value fetched from output.txt file - $content" | out-file final.txt    
       
-      #- name: Upload final file
-       # uses: actions/upload-artifact@v3
-        #with:
-         # name: upload-final-file
-          #path: final.txt
+#      - name: Upload final file
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: upload-final-file
+#          path: final.txt
 
     
       
