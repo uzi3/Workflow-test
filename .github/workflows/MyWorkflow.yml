@@ -50,7 +50,10 @@ jobs:
           path: output.txt
         
   Download_artifact:
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     needs: build
     steps:
       - name: Download artifact file
@@ -65,6 +68,7 @@ jobs:
           write-host "Here's the value fetched from output.txt file - $content"
           pwd
           get-childitem .\
+          ($PSVersionTable).os
 #          write-output "Here's the value fetched from output.txt file - $content" | out-file final.txt    
       
 #      - name: Upload final file
