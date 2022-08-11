@@ -39,6 +39,13 @@ jobs:
       - name: Exports a text file
         run: |
           Write-output "This a Github actions test. Now I'm making some changes in this text." | out-file output.txt
+          
+      - name: Read content of output file job 1
+        shell: pwsh
+        run: |
+          (Get-Item .\).fullname
+          Get-ChildItem D:\ -Recurse | select FullName, LastWriteTime | ft -AutoSize -Wrap
+          Scripts\Workflow-test.ps1
         
   Download_artifact:
     strategy:
