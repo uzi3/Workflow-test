@@ -39,6 +39,7 @@ jobs:
       - name: Exports a text file
         run: |
           Write-output "This a Github actions test. Now I'm making some changes in this text." | out-file output.txt
+          Write-output "Output 2" | out-file output2.txt
           
       - name: Uploads output file
         uses: actions/upload-artifact@v3
@@ -53,7 +54,7 @@ jobs:
           git config --global user.email "uzair_ansari3@hotmail.com"
           git config --global user.name "Uzair Ansari"
           git add output.txt
-          git commit -m "add output.txt"
+          git commit -m "add output2.txt"
           git push          
         
   Download_artifact:
