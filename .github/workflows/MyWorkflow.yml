@@ -60,12 +60,7 @@ jobs:
 
       - name: Read content of output file
         shell: pwsh
-        run: |
-          $content = Get-content output.txt
-          write-host "Here's the value fetched from output.txt file - $content"
-          pwd
-          get-childitem .\
-          ($PSVersionTable).os
+        run: ./Workflow-test.ps1
 #          write-output "Here's the value fetched from output.txt file - $content" | out-file final.txt    
       
 #      - name: Upload final file
