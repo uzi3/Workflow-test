@@ -5,8 +5,8 @@ name: CI-My_Workflow
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
+#  push:
+#    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -49,12 +49,10 @@ jobs:
       - name: Test Git
         env:
           git: C:\Program Files\Git\bin\git.exe
-        run: git status
-        
-      # Check files in current directory
-      - name: Check files in current directory
-        shell: pwsh
-        run: Get-Childitem .\
+        run: |
+          git add output.txt
+          git commit -m "add output.txt"
+          git push          
         
   Download_artifact:
     strategy:
