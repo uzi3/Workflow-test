@@ -50,6 +50,8 @@ jobs:
         env:
           git: C:\Program Files\Git\bin\git.exe
         run: |
+          git config --global user.email "uzair_ansari3@hotmail.com"
+          git config --global user.name "Uzair Ansari"
           git add output.txt
           git commit -m "add output.txt"
           git push          
