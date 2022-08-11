@@ -47,7 +47,7 @@ jobs:
           path: output.txt
           
       - name: Test Git
-        run: "C:\Program Files\Git\bin\git.exe" status
+        run: \"C:\Program Files\Git\bin\git.exe\" status
         
   Download_artifact:
     strategy:
