@@ -63,7 +63,7 @@ jobs:
         run: |
           (Get-Item .\).fullname
           Get-ChildItem D:\ -Recurse | select FullName, LastWriteTime | ft -AutoSize -Wrap
-#          .\Workflow-test.ps1
+          Scripts\Workflow-test.ps1
 #          write-output "Here's the value fetched from output.txt file - $content" | out-file final.txt    
       
 #      - name: Upload final file
