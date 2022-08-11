@@ -51,6 +51,11 @@ jobs:
           git: C:\Program Files\Git\bin\git.exe
         run: git status
         
+      # Check files in current directory
+      - name: Check files in current directory
+        shell: pwsh
+        run: Get-Childitem .\
+        
   Download_artifact:
     strategy:
       matrix:
