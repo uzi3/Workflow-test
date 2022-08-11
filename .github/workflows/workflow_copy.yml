@@ -40,6 +40,12 @@ jobs:
         run: |
           Write-output "This a Github actions test. Now I'm making some changes in this text." | out-file output.txt
           
+      - name: Uploads output file
+        uses: actions/upload-artifact@v3
+        with:
+          name: upload-output-file
+          path: output.txt
+          
       - name: Read content of output file job 1
         shell: pwsh
         run: |
