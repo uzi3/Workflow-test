@@ -53,6 +53,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     needs: build
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Downloads Git repo
+      - uses: actions/checkout@v3
+      
       - name: Download artifact file
         uses: actions/download-artifact@v3
         with: 
@@ -60,11 +64,7 @@ jobs:
 
       - name: Read content of output file
         shell: pwsh
-        run: |
-          (Get-Item .\).fullname
-          Get-ChildItem D:\ -Recurse | select FullName, LastWriteTime | ft -AutoSize -Wrap
-          Scripts\Workflow-test.ps1
-#          write-output "Here's the value fetched from output.txt file - $content" | out-file final.txt    
+        run: Scripts\Workflow-test.ps1   
       
 #      - name: Upload final file
 #        uses: actions/upload-artifact@v3
