@@ -53,7 +53,7 @@ jobs:
         run: |
           git config --global user.email "uzair_ansari3@hotmail.com"
           git config --global user.name "Uzair Ansari"
-          git add output.txt
+          git add output2.txt
           git commit -m "add output2.txt"
           git push          
         
