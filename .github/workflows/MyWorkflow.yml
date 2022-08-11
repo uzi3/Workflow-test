@@ -64,7 +64,7 @@ jobs:
 
       - name: Read content of output file
         shell: pwsh
-        run: Scripts\Workflow-test.ps1   
+        run: Scripts/Workflow-test.ps1   
       
 #      - name: Upload final file
 #        uses: actions/upload-artifact@v3
