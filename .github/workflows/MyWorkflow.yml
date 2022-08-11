@@ -45,6 +45,9 @@ jobs:
         with:
           name: upload-output-file
           path: output.txt
+          
+      - name: Test Git
+        run: "C:\Program Files\Git\bin\git.exe" status
         
   Download_artifact:
     strategy:
