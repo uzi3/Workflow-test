@@ -31,8 +31,8 @@ jobs:
         echo "Do something with this ${changed_file}."
         done
         echo "------"
-        echo modified
-        echo added
+        echo $modified
+        echo $added
       env:
         modified: ${{ steps.files.outputs.modified }}
         added: ${{ steps.files.outputs.added }}
