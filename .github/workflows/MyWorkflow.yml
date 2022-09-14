@@ -28,6 +28,8 @@ jobs:
           for changed_file in ${{ steps.files.outputs.all }}; do
           echo "Do something with this ${changed_file}."
           done
+          echo "--------"
+          echo ${{ steps.files.outputs.all }}
 
 
 #      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
