@@ -28,9 +28,9 @@ jobs:
     - name: Print files using vars  
       run: |
         echo "Modified files - $modified"
-        for modfile in ${{ modified }}
+        for modfile in $modified
         do
-          echo ${modfile}
+          echo $modfile
         done
 
         echo "Newly added files - $added"
