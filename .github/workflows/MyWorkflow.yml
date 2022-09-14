@@ -38,9 +38,30 @@ jobs:
         do
           echo $addfile
         done
+
+        echo "Added_and_modified files - $added_modified"
+        for add_mod_file in $added
+        do
+          echo $add_mod_file
+        done
+
+        echo "Removed files - $removed"
+        for removedfile in $removed
+        do
+          echo $removedfile
+        done
+
+        echo "Renamed files - $renamed"
+        for renamedfile in $renamed
+        do
+          echo $renamedfile
+        done
       env:
         modified: ${{ steps.files.outputs.modified }}
         added: ${{ steps.files.outputs.added }}
+        added_modified: ${{ steps.files.outputs.added_modified }}
+        removed: ${{ steps.files.outputs.removed }}
+        renamed: ${{ steps.files.outputs.renamed }}
 
 
 #      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
