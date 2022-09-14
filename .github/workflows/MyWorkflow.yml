@@ -24,14 +24,16 @@ jobs:
     steps:
     - id: files
       uses: jitterbit/get-changed-files@v1
-      with:
-        format: 'csv'
     - run: |
-        mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
-        for added_modified_file in "${added_modified_files[@]}"; do
-          echo "Do something with this ${added_modified_file}."
+        for changed_file in ${{ steps.files.outputs.all }}; do
+        echo "Do something with this ${changed_file}."
         done
-
+        echo "------"
+        echo modified
+        echo added
+      env:
+        modified: ${{ steps.files.outputs.modified }}
+        added: ${{ steps.files.outputs.added }}
 
 #      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #      - uses: actions/checkout@v3
