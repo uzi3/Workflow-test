@@ -22,6 +22,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - id: files
+      uses: jitterbit/get-changed-files@v1
+
     - name: Print files using vars  
       run: |
         echo "Modified files - $modified"
