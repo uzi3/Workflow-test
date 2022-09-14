@@ -34,10 +34,10 @@ jobs:
         done
 
         echo "Newly added files - $added"
-#        for addfile in ${{ added }}
-#        do
-#          echo ${addfile}
-#        done
+        for addfile in $added
+        do
+          echo $addfile
+        done
       env:
         modified: ${{ steps.files.outputs.modified }}
         added: ${{ steps.files.outputs.added }}
