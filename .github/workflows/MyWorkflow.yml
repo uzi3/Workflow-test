@@ -27,7 +27,7 @@ jobs:
       env:
         modified: ${{ steps.files.outputs.modified }}
         added: ${{ steps.files.outputs.added }}
-      run: |
+    - run: |
         for changed_file in ${{ steps.files.outputs.all }}; do
         echo "Do something with this ${changed_file}."
         done
