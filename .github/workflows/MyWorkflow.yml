@@ -24,16 +24,18 @@ jobs:
     steps:
     - id: files
       uses: jitterbit/get-changed-files@v1
-      env:
-        modified: ${{ steps.files.outputs.modified }}
-        added: ${{ steps.files.outputs.added }}
-    - run: |
+
+    - name: Print files using vars  
+      run: |
         for changed_file in ${{ steps.files.outputs.all }}; do
         echo "Do something with this ${changed_file}."
         done
         echo "------"
         echo modified
         echo added
+      env:
+        modified: ${{ steps.files.outputs.modified }}
+        added: ${{ steps.files.outputs.added }}
 
 
 #      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
